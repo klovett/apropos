@@ -1,0 +1,16 @@
+;;;; apropos.setup
+
+(use setup-helper-mod)
+
+(verify-extension-name "apropos")
+
+(unless (version>=? (chicken-version) "4.4.0")
+  (warning "cannot use with CHICKEN earlier than version 4.4.0, install apropos:1.4.3 instead.")
+  (exit 1) )
+
+(setup-shared-extension-module 'apropos (extension-version "2.7.2")
+  #:types? #t
+  #:inline? #t
+  #:compile-options '(
+    -O3 -d1
+    -no-procedure-checks))

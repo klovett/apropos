@@ -1,0 +1,20 @@
+;;;; apropos.meta  -*- Hen -*-
+
+((egg "apropos.egg")
+ (category misc)
+ (author "[[kon lovett]]")
+ (license "BSD")
+ (doc-from-wiki)
+ (synopsis "Chicken apropos")
+ (depends
+	(setup-helper "1.5.2")
+	(miscmacros "2.91")
+	;(moremacros "1.4.1")
+	(string-utils "1.1.0")
+	(symbol-utils "1.0.0")
+	(check-errors "1.9.0"))
+ (test-depends test)
+ (files
+  "apropos.meta" "apropos.setup"
+  "apropos.scm"
+  "tests/run.scm") )

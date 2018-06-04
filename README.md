@@ -8,8 +8,8 @@ CHICKEN Scheme Apropos API & REPL Command
 
 An *apropos* facility for Chicken Scheme.
 
-When loaded by the interpreter {{csi}} {{apropos}} provides the interpreter
-command {{a}}.
+When loaded by the interpreter **csi** **apropos** provides the interpreter
+command **a**.
 
 
 #### Apropos API
@@ -30,7 +30,7 @@ command {{a}}.
 
 ### REPL Examples
 
-<enscript language=scheme>
+```scheme
 #;1> ,a print qualified macros sort name
 char-set:printing                            variable
 define-record-printer                        macro
@@ -66,12 +66,12 @@ char-set:whitespace                          variable
 *                                                           procedure C_times
   ... 1600 lines + ...
 ##sys#write-char/port                                       procedure (c port)
-</enscript>
+```
 
 
 ### API Examples
 
-<enscript language=scheme>
+```scheme
 > (apropos 'print)
 flonum-print-precision                     procedure tmp
 fprintf                                    procedure (port fstr . args)
@@ -90,9 +90,9 @@ symbol-printname-length      symbol-utils  procedure (sym)
 symbol-printname<?           symbol-utils  procedure (x y)
 symbol-printname=?           symbol-utils  procedure (x y)
 char-set:printing                          variable
-</enscript>
+```
 
-<enscript language=scheme>
+```scheme
 > (pp (apropos-list 'print))
 ((expand-full#pretty-print-expand*
   symbol-utils#max-symbol-printname-length
@@ -111,9 +111,9 @@ char-set:printing                          variable
   pretty-print
   flonum-print-precision
   pretty-print-width))
-</enscript>
+```
 
-<enscript language=scheme>
+```scheme
 > (pp (apropos-information-list 'print))
 ((((||: . flonum-print-precision) procedure . tmp)
  ((||: . fprintf) procedure port fstr . args)
@@ -132,9 +132,9 @@ char-set:printing                          variable
  ((symbol-utils . symbol-printname<?) procedure x y)
  ((symbol-utils . symbol-printname=?) procedure x y)
  ((||: . char-set:printing) . variable)))
-</enscript>
+```
 
-<enscript language=scheme>
+```scheme
 > (apropos 'print #:qualified? #t)
 printer:                                     keyword
 flonum-print-precision                       procedure tmp
@@ -164,19 +164,19 @@ symbol-printname=?             symbol-utils  procedure (x y)
 char-set:printing                            variable
 ##sys#record-printers                        variable
 ##sys#repl-print-length-limit                variable
-</enscript>
+```
 
 
 ### Notes
 
-* Use {{"?"}} as the {{PATT}} to list symbols containing a {{#\?}}.
+* Use **"?"** as the **PATT** to list symbols containing a **#\?**.
 
-<enscript language=scheme>
+```scheme
 #;1> ,a "?"
 abandoned-mutex-exception?                            procedure (x)
                                 ...
 zero?                                                 procedure (n)
-</enscript>
+```
 
 
 ### Bugs and Limitations
